@@ -19,7 +19,11 @@ okf_version: "0.1"
 
 ## Source of Truth
 
-<!-- 안내: 아래 원칙은 고정입니다. 프로젝트마다 수정하지 마세요. -->
-- **API 스키마 정본 = OpenAPI(`/openapi.json`)**. 어떤 문서에도 스키마를 복제하지 않는다.
+<!-- 안내: 원칙 자체(복제 금지, 단일 정본)는 고정입니다. 첫 줄의 정본 아티팩트만
+     프로젝트 스택에 맞게 지정하세요. 기본값은 OpenAPI(/openapi.json)이며, 대안:
+     수기 openapi.yaml(spec-first) / GraphQL SDL / gRPC .proto / tRPC 라우터 타입 /
+     코드의 스키마 정의(Pydantic, zod 등). -->
+- **API 계약 정본 = <기계가독 스키마 아티팩트, 기본: OpenAPI(`/openapi.json`)>**.
+  어떤 문서에도 스키마를 복제하지 않는다.
 - **기능 정의 정본 = `features/` 수기 문서**. 기획 원본에서 사람이 이관하며 자동생성하지 않는다.
 - 코드 구조 문서(backend/frontend/contracts)는 코드에서 역생성하며, 코드 변경 시 재역생성한다.
